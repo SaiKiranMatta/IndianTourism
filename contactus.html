@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="homepage">
+  <header>
+    <nav>
+        <div class="logo" id="logo"><h1 class = "">Indian Tourism</h1></div>
+        <div class="menu">
+            <a href="index.xhtml">Home</a>
+            <a href="Popular.xhtml">Popular</a>
+            <a href="bystate.xhtml">By State</a>
+            <a href="bytype.xhtml">By type</a>
+            <a href="Gallery.xhtml">Gallery</a>
+            <a href="AboutUs.xhtml">About Us</a>
+        </div>
+    </nav>
+</header>
+  <div class="contactUs">  
+    <div class="ContactUsCon">
+      <h1>Contact Us</h1>
+      <form>
+        <div class="form-row">
+          <div class="form-row-verticle">
+            <label for="first-name" class="required">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required size=27>
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="state">State:</label>
+            <select id="state" name="state" onchange="populateplaces()">
+              <option value="">Select State</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Goa">Goa</option>
+              <option value="Telangana">Telangana</option>
+              <option value="JandK">Jammu and Kashmir</option>
+              <!-- Add more state options here -->
+            </select>
+          </div>
+          <div class="form-row-verticle"> 
+            <label for="last-name" >Last Name:</label>
+            <input type="text" id="last-name" name="last-name" size=27>
+            <br>
+            <label for="phone" class="required">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <br>
+            <label for="place">Place:</label>
+            <select id="place" name="place" disabled>
+              <option value="">Select Place</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row-verticle  sub-msg"">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject">
+          <br>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+        
+        <script>
+          function populateplaces() {
+            var state = document.getElementById("state");
+            var place = document.getElementById("place");
+            
+            place.innerHTML = ""; // Clear previous options
+            
+            if (state.value === "") {
+              place.disabled = true; // Disable place dropdown if no state is selected
+            } else {
+              place.disabled = false; // Enable place dropdown
+              // Add place options based on the selected state
+              if (state.value === "Gujarat") {
+                addOption(place, "Statue of Unity", "Statue of Unity");
+                addOption(place, "Sun Temple", "Sun Temple");
+                addOption(place, "Zarwani Waterfalls", "Zarwani Waterfalls");
+                // Add more options here for other places in Gujarat
+              } else if (state.value === "Delhi") {
+                addOption(place, "Taj Mahal", "Taj Mahal");
+                addOption(place, "Lotus Temple", "Lotus Temple");
+                addOption(place, "India Gate", "India Gate");
+                // Add more options here for other places in Delhi
+              } else if (state.value === "Goa") {
+                addOption(place, "Basilica of Bom Jesus", "Basilica of Bom Jesus");
+                addOption(place, "Dudhsagar Falls", "Dudhsagar Falls");
+                addOption(place, "Anjuna Beach", "Anjuna Beach");
+                // Add more options here for other places in Goa
+              }
+             else if (state.value === "Telangana") {
+                addOption(place, "Statue of Equality", "Statue of Equality");
+                addOption(place, "Charminar", "Karimnaga");
+                addOption(place, "1000 Pillar Temple", "1000 Pillar Temple");
+                // Add more options here for other places in Goa
+              }
+              else if(state.value === "JandK"){
+                addOption(place, "Gulmarg", "Gulmarg");
+                addOption(place, "Vaishno Devi", "Vaishno Devi");
+              }
+            
+              // Add more conditions for other states
+            }
+          }
+          
+          function addOption(selectElement, text, value) {
+            var option = document.createElement("option");
+            option.text = text;
+            option.value = value;
+            selectElement.add(option);
+          }
+        </script>
+    <div class="submit">
+      <input type="submit" value="Submit">
+    </div>
+      
+    </div>
+      
+    </form>
+
+  </div>
+  <footer class="page__footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>Indian Tourism</h4>
+            <ul>
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="AboutUs.xhtml">About</a></li>
+                <li><a href="Popular.xhtml">Popular</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+                        </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Find us on</h4>
+                    <ul>
+                <li>
+                    <a
+                        href="https://www.instagram.com/tourismgoi/?hl=en"
+                        target="_blank"
+                        rel="noopener"
+                        >Instagram</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.youtube.com/channel/UCMxJPchGLE_CJ1MJbJy-xDQ"
+                        target="_blank"
+                        rel="noopener"
+                        >YouTube</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://twitter.com/tourismgoi"
+                        target="_blank"
+                        rel="noopener"
+                        >Twitter</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://www.facebook.com/incredibleindia/"
+                        target="_blank"
+                        rel="noopener"
+                        >Facebook</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>&copy; Incredible India</h4>
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+                    <img
+                        alt="Creative Commons License"
+                        src="assets/license.png"
+                    />
+                </a>
+            </p>
+            <p>
+                <a href="http://cbit.ac.in" target="_blank" rel="noopener">Chaitanya Bharathi Institute of Technology</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
